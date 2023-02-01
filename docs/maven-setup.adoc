@@ -47,7 +47,7 @@ Here is an Arquillian-powered test with Persistence Extension.
 
 [source,java]
 ----
-@RunWith(Arquillian.class)
+@ExtendWith(ArquillianExtension.class)
 public class UserPersistenceTest {
 
     @Deployment

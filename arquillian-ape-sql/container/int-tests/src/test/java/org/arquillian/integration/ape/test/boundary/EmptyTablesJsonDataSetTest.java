@@ -1,7 +1,7 @@
 package org.arquillian.integration.ape.test.boundary;
 
-import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.PersistenceContext;
 import org.arquillian.ape.api.Cleanup;
 import org.arquillian.ape.api.UsingDataSet;
 import org.arquillian.ape.api.TestExecutionPhase;

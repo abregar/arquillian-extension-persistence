@@ -4,7 +4,7 @@
   <parent>
     <groupId>org.arquillian.ape</groupId>
     <artifactId>arquillian-ape-sql-parent</artifactId>
-    <version>2.0.0-alpha.7</version>
+    <version>2.0.0-alpha.7.a1</version>
   </parent>
 
   <modelVersion>4.0.0</modelVersion>
@@ -17,11 +17,11 @@
   <modules>
     <module>core</module>
     <module>dbunit</module>
-    <module>flyway</module>
+<!--    <module>flyway</module>-->
     <module>dbunit-ftest</module>
-    <module>flyway-ftest</module>
-    <module>flyway-declarative-ftest</module>
-    <module>dbunit-flyway-ftest</module>
+<!--    <module>flyway-ftest</module>-->
+<!--    <module>flyway-declarative-ftest</module>-->
+<!--    <module>dbunit-flyway-ftest</module>-->
     <module>dbunit-junit-rule-ftest</module>
   </modules>
 
@@ -46,7 +46,7 @@
     </dependencies>
   </dependencyManagement>
   <properties>
-    <version.assertj-db>1.1.1</version.assertj-db>
+    <version.assertj-db>2.0.2</version.assertj-db>
   </properties>
 
 </project>

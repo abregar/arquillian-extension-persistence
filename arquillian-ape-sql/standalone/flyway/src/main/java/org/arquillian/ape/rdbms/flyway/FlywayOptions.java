@@ -8,7 +8,7 @@ import java.util.Map;
 import java.util.Set;
 import java.util.stream.Collectors;
 import org.arquillian.ape.core.RunnerExpressionParser;
-import org.flywaydb.core.api.callback.FlywayCallback;
+//import org.flywaydb.core.api.callback.FlywayCallback;
 import org.flywaydb.core.api.resolver.MigrationResolver;
 
 public class FlywayOptions implements Map<String, Object> {

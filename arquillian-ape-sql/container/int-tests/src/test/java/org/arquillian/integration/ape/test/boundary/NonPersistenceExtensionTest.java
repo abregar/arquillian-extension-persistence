@@ -17,8 +17,8 @@
  */
 package org.arquillian.integration.ape.test.boundary;
 
-import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.PersistenceContext;
 import org.arquillian.integration.ape.example.UserAccount;
 import org.jboss.arquillian.container.test.api.Deployment;
 import org.jboss.arquillian.junit.Arquillian;

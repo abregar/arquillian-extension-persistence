@@ -1,7 +1,5 @@
 package org.arquillian.ape.core;
 
-import java.lang.annotation.Annotation;
-import java.util.Collections;
 import org.arquillian.ape.spi.Populator;
 import org.arquillian.ape.spi.PopulatorService;
 import org.jboss.arquillian.core.api.Injector;
@@ -12,8 +10,11 @@ import org.junit.runner.RunWith;
 import org.mockito.Mock;
 import org.mockito.junit.MockitoJUnitRunner;
 
+import java.lang.annotation.Annotation;
+import java.util.Collections;
+
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.mockito.Matchers.any;
+import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.when;
 
 @RunWith(MockitoJUnitRunner.class)

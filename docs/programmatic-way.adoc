@@ -23,7 +23,7 @@ You can use _DBUnit_ scripts (XML, JSON, YAML, Excel) in programmatic approach a
 [source, java]
 .PersonTest.java
 ----
-@RunWith(Arquillian.class)
+@ExtendWith(ArquillianExtension.class)
 public class PersonTest {
 
     @DbUnit
@@ -68,7 +68,7 @@ You can use _Flyway_ scripts to migrate the schema of a SQL database as well.
 [source, java]
 .FilmLibraryTest
 ----
-@RunWith(Arquillian.class)
+@ExtendWith(ArquillianExtension.class)
 public class FilmLibraryTest {
 
     @Flyway
@@ -124,7 +124,7 @@ To use it:
 [source, java]
 .PostmanTest.java
 ----
-@RunWith(Arquillian.class)
+@ExtendWith(ArquillianExtension.class)
 public class PostmanTest {
 
     @Postman
@@ -166,7 +166,7 @@ For example in case of Couchbase:
 [source, java]
 .CouchbaseTest.java
 ----
-@RunWith(Arquillian.class)
+@ExtendWith(ArquillianExtension.class)
 public class CouchbaseTest {
 
     @Couchbase

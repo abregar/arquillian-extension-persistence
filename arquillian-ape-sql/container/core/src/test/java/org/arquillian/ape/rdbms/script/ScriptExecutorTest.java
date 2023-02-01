@@ -17,9 +17,6 @@
  */
 package org.arquillian.ape.rdbms.script;
 
-import java.sql.Connection;
-import java.sql.SQLException;
-import java.sql.Statement;
 import org.arquillian.ape.rdbms.script.configuration.ScriptingConfiguration;
 import org.arquillian.ape.rdbms.script.splitter.DefaultStatementSplitter;
 import org.arquillian.ape.rdbms.testutils.FileLoader;
@@ -28,7 +25,11 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.ArgumentCaptor;
 import org.mockito.Mock;
-import org.mockito.runners.MockitoJUnitRunner;
+import org.mockito.junit.MockitoJUnitRunner;
+
+import java.sql.Connection;
+import java.sql.SQLException;
+import java.sql.Statement;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.Mockito.mock;

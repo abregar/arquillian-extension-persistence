@@ -1,8 +1,8 @@
 package org.arquillian.integration.ape.test.seeding;
 
 import java.util.List;
-import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.PersistenceContext;
 import org.arquillian.ape.api.UsingDataSet;
 import org.arquillian.ape.rdbms.ApplyScriptBefore;
 import org.arquillian.ape.rdbms.DataSeedStrategy;

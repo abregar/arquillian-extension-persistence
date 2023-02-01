@@ -2,8 +2,8 @@ package org.arquillian.integration.ape.dsl;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.PersistenceContext;
 import org.arquillian.ape.rdbms.PersistenceTest;
 import org.arquillian.ape.rdbms.core.RdbmsPopulator;
 import org.arquillian.ape.rdbms.core.configuration.PersistenceConfiguration;

@@ -4,7 +4,7 @@
   <parent>
     <groupId>org.arquillian.ape</groupId>
     <artifactId>arquillian-ape-sql-parent</artifactId>
-    <version>2.0.0-alpha.7</version>
+    <version>2.0.0-alpha.7.a1</version>
   </parent>
 
   <modelVersion>4.0.0</modelVersion>
@@ -14,6 +14,12 @@
   <name>Arquillian Ape SQL Core DbUnit</name>
 
   <dependencies>
+
+    <dependency>
+      <groupId>org.junit.jupiter</groupId>
+      <artifactId>junit-jupiter-api</artifactId>
+      <scope>test</scope>
+    </dependency>
 
     <dependency>
       <groupId>org.dbunit</groupId>
@@ -41,7 +47,7 @@
     <dependency>
       <groupId>org.arquillian.ape</groupId>
       <artifactId>arquillian-ape-sql-standalone-core</artifactId>
-      <version>2.0.0-alpha.7</version>
+      <version>2.0.0-alpha.7.a1</version>
     </dependency>
 
   </dependencies>

@@ -1,7 +1,7 @@
 package org.arquillian.integration.ape.util;
 
 import java.util.List;
-import javax.persistence.EntityManager;
+import jakarta.persistence.EntityManager;
 import org.arquillian.integration.ape.example.UserAccount;
 
 import static org.assertj.core.api.Assertions.assertThat;

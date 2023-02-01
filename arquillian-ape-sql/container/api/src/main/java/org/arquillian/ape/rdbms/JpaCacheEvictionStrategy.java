@@ -17,7 +17,7 @@
  */
 package org.arquillian.ape.rdbms;
 
-import javax.persistence.EntityManager;
+import jakarta.persistence.EntityManager;
 
 /**
  * Strategy how to evict JPA second level cache.

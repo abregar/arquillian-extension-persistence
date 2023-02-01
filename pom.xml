@@ -4,7 +4,7 @@
   <parent>
     <groupId>org.jboss</groupId>
     <artifactId>jboss-parent</artifactId>
-    <version>22</version>
+    <version>39</version>
     <relativePath />
   </parent>
 
@@ -12,7 +12,7 @@
 
   <groupId>org.arquillian.ape</groupId>
   <artifactId>arquillian-ape-parent</artifactId>
-  <version>2.0.0-alpha.7</version>
+  <version>2.0.0-alpha.7.a1</version>
   <packaging>pom</packaging>
 
   <name>Arquillian Ape</name>
@@ -69,40 +69,45 @@
 
   <properties>
     <!-- Arquillian dependencies -->
-    <version.arquillian_core>1.4.0.Final</version.arquillian_core>
-    <version.arquillian_transaction>1.0.3.Final</version.arquillian_transaction>
-    <version.shrinkwrap.resolver>2.2.6</version.shrinkwrap.resolver>
+    <version.arquillian_core>1.7.0.Alpha13</version.arquillian_core>
+    <version.arquillian_transaction>1.0.6.a1</version.arquillian_transaction>
+    <version.shrinkwrap.resolver>3.1.4</version.shrinkwrap.resolver>
     <version.jbossas_spec>3.0.1.Final</version.jbossas_spec>
-    <version.dbunit>2.5.3</version.dbunit>
-    <version.flyway>4.1.2</version.flyway>
-    <version.snakeyaml>1.18</version.snakeyaml>
-    <version.jackson>1.9.11</version.jackson>
-    <version.mysql.driver>5.1.21</version.mysql.driver>
-    <version.gson>2.8.0</version.gson>
-    <version.okhttp>3.6.0</version.okhttp>
+    <version.dbunit>2.7.3</version.dbunit>
+    <version.flyway>8.5.11</version.flyway>
+    <version.snakeyaml>1.33</version.snakeyaml>
+    <version.jackson>1.9.13</version.jackson>
+    <version.mysql.driver>8.0.29</version.mysql.driver>
+    <version.gson>2.10.1</version.gson>
+    <version.okhttp>5.0.0-alpha.11</version.okhttp>
 
     <!-- Testing dependencies -->
     <version.findbugs.annotations>3.0.1u2</version.findbugs.annotations>
-    <version.assertj.core>3.7.0</version.assertj.core>
-    <version.mockito>2.7.14</version.mockito>
-    <version.cube>1.5.0</version.cube>
-    <version.wiremock>2.5.1</version.wiremock>
-    <version.restassured>3.0.3</version.restassured>
+    <version.assertj.core>3.24.2</version.assertj.core>
+    <version.mockito>5.0.0</version.mockito>
+    <version.cube>1.18.2</version.cube>
+    <version.wiremock>3.0.0-beta-2</version.wiremock>
+    <version.restassured>5.3.0</version.restassured>
+    <version.junit-jupiter-api>5.9.2</version.junit-jupiter-api>
 
     <!-- Containers -->
     <version.arq.container.glassfish>1.0.0.CR4</version.arq.container.glassfish>
     <version.glassfish>3.1.2.2</version.glassfish>
     <version.jbossas_7>7.0.2.Final</version.jbossas_7>
-    <version.wildfly>8.2.1.Final</version.wildfly>
+    <version.wildfly>27.0.0.Final</version.wildfly>
+
+    <!-- jakarta EE -->
+    <version.jakartaee-api>10.0.0</version.jakartaee-api>
+    <version.jta>2.0.1</version.jta>
 
     <!-- Maven plugins -->
     <version.docker.plugin>0.15.16</version.docker.plugin>
     <version.build.helper.plugin>1.10</version.build.helper.plugin>
 
     <!-- Overridden from parent -->
-    <jdk.min.version>1.8</jdk.min.version>
-    <maven.compiler.target>1.8</maven.compiler.target>
-    <maven.compiler.source>1.8</maven.compiler.source>
+    <jdk.min.version>17</jdk.min.version>
+    <maven.compiler.target>17</maven.compiler.target>
+    <maven.compiler.source>17</maven.compiler.source>
   </properties>
 
   <dependencyManagement>
@@ -204,6 +209,12 @@
         <artifactId>annotations</artifactId>
         <version>${version.findbugs.annotations}</version>
       </dependency>
+      <dependency>
+        <groupId>org.junit.jupiter</groupId>
+        <artifactId>junit-jupiter-api</artifactId>
+        <version>${version.junit-jupiter-api}</version>
+        <scope>test</scope>
+      </dependency>
     </dependencies>
 
   </dependencyManagement>
@@ -212,7 +223,7 @@
     <dependency>
       <groupId>net.jcip</groupId>
       <artifactId>jcip-annotations</artifactId>
-      <version>1.0</version>
+      <version>1.0.0.redhat-8</version>
       <scope>test</scope>
     </dependency>
   </dependencies>
@@ -264,11 +275,12 @@
               javax.servlet:servlet-api
             </classpathDependencyExcludes>
             <classpathDependencyExcludes>
-              org.apache.felix:javax.servlet
+              org.apache.felix:jakarta.servlet
             </classpathDependencyExcludes>
           </classpathDependencyExcludes>
         </configuration>
       </plugin>
+<!--
       <plugin>
         <groupId>org.codehaus.mojo</groupId>
         <artifactId>animal-sniffer-maven-plugin</artifactId>
@@ -290,6 +302,7 @@
           </signature>
         </configuration>
       </plugin>
+-->
     </plugins>
   </build>
 

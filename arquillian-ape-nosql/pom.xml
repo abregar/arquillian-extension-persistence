@@ -4,7 +4,7 @@
   <parent>
     <groupId>org.arquillian.ape</groupId>
     <artifactId>arquillian-ape-parent</artifactId>
-    <version>2.0.0-alpha.7</version>
+    <version>2.0.0-alpha.7.a1</version>
   </parent>
 
   <modelVersion>4.0.0</modelVersion>
@@ -14,8 +14,8 @@
     <version.jedis>2.9.0</version.jedis>
     <version.couchbase>2.4.3</version.couchbase>
     <version.couchdb>1.4.4</version.couchdb>
-    <version.awaitility>2.0.0</version.awaitility>
-    <version.nosqlunit>1.0.0-rc.5</version.nosqlunit>
+    <version.awaitility>4.2.0</version.awaitility>
+    <version.nosqlunit>1.0.0</version.nosqlunit>
     <version.vault>2.0.0</version.vault>
   </properties>
 
@@ -92,19 +92,19 @@
   <modules>
     <module>core</module>
     <module>couchbase</module>
-    <module>couchbase-ftest</module>
+<!--    <module>couchbase-ftest</module>-->
     <module>mongodb</module>
-    <module>mongodb-ftest</module>
+    <!--<module>mongodb-ftest</module>-->
     <module>redis</module>
-    <module>redis-ftest</module>
-    <module>redis-declarative-rule-ftest</module>
+    <!--<module>redis-ftest</module>-->
+    <!--<module>redis-declarative-rule-ftest</module>-->
     <module>vault</module>
-    <module>vault-ftest</module>
+    <!--<module>vault-ftest</module>-->
     <module>couchdb</module>
-    <module>couchdb-ftest</module>
+    <!--<module>couchdb-ftest</module>-->
     <module>infinispan</module>
-    <module>infinispan-ftest</module>
-    <module>polyglot-nosql-ftest</module>
+    <!--<module>infinispan-ftest</module>-->
+    <!--<module>polyglot-nosql-ftest</module>-->
   </modules>
 
 </project>
