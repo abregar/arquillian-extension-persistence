@@ -14,8 +14,9 @@
   <description>Extension for controlling data sources</description>
 
   <properties>
-    <version.cdi>1.0-SP1</version.cdi>
+    <!--<version.cdi>1.0-SP1</version.cdi>-->
     <version.junit_params>1.0.4</version.junit_params>
+    <version.junit5>5.9.2</version.junit5>
   </properties>
 
   <dependencies>
@@ -126,6 +127,12 @@
       <artifactId>arquillian-core-impl-base</artifactId>
       <scope>test</scope>
       <classifier>tests</classifier>
+    </dependency>
+
+    <dependency>
+      <groupId>org.junit.jupiter</groupId>
+      <artifactId>junit-jupiter-api</artifactId>
+      <scope>provided</scope>
     </dependency>
 
     <dependency>

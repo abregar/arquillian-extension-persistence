@@ -41,6 +41,9 @@ import org.jboss.arquillian.test.spi.annotation.TestScoped;
 import org.jboss.arquillian.test.spi.event.suite.After;
 import org.jboss.arquillian.test.spi.event.suite.Before;
 import org.jboss.arquillian.test.spi.event.suite.BeforeClass;
+import org.junit.jupiter.api.extension.AfterEachCallback;
+import org.junit.jupiter.api.extension.BeforeEachCallback;
+import org.junit.jupiter.api.extension.ExtensionContext;
 
 /**
  * Determines if persistence extension should be triggered for the given
@@ -48,7 +51,7 @@ import org.jboss.arquillian.test.spi.event.suite.BeforeClass;
  *
  * @author <a href="mailto:bartosz.majsak@gmail.com">Bartosz Majsak</a>
  */
-public class PersistenceTestTrigger {
+public class PersistenceTestTrigger implements BeforeEachCallback, AfterEachCallback {
 
     @Inject
     @ClassScoped
@@ -102,26 +105,40 @@ public class PersistenceTestTrigger {
         }
     }
 
-    public void beforeTest(@Observes(precedence = 25) Before beforeTestEvent) {
+    @Override
+    public void beforeEach(final ExtensionContext extensionContext) throws Exception {
         PersistenceConfiguration persistenceConfiguration = configurationInstance.get();
+
         persistenceExtensionFeatureResolverProvider.set(
-            new PersistenceExtensionFeatureResolver(beforeTestEvent.getTestMethod(), metadataExtractorProducer.get(),
+            new PersistenceExtensionFeatureResolver(extensionContext.getTestMethod().get(),
+                metadataExtractorProducer.get(),
                 persistenceConfiguration));
         persistenceExtensionScriptingFeatureResolverProvider.set(
-            new PersistenceExtensionScriptingFeatureResolver(beforeTestEvent.getTestMethod(),
+            new PersistenceExtensionScriptingFeatureResolver(extensionContext.getTestMethod().get(),
                 metadataExtractorProducer.get(), scriptingConfigurationInstance.get()));
 
         if (persistenceExtensionEnabler.get().shouldPersistenceExtensionBeActivated()) {
             createDataSource();
-            beforePersistenceTestEvent.fire(new BeforePersistenceTest(beforeTestEvent));
+            beforePersistenceTestEvent.fire(new BeforePersistenceTest(extensionContext));
+        }
+    }
+
+    public void beforeTest(@Observes(precedence = 25) Before beforeTestEvent) {
+        // TODO DRAFT: moved to beforeEach, validate if proper pattern
+    }
+
+    @Override
+    public void afterEach(final ExtensionContext extensionContext) throws Exception {
+        if (persistenceExtensionEnabler.get().shouldPersistenceExtensionBeActivated()) {
+            afterPersistenceTestEvent.fire(new AfterPersistenceTest(extensionContext));
         }
     }
 
     public void afterTest(@Observes(precedence = -2) After afterTestEvent) {
-        if (persistenceExtensionEnabler.get().shouldPersistenceExtensionBeActivated()) {
-            afterPersistenceTestEvent.fire(new AfterPersistenceTest(afterTestEvent));
-        }
+        // TODO DRAFT: moved to afterEach, validate if proper pattern
     }
+
+
 
     // Private methods
 
@@ -140,4 +157,7 @@ public class PersistenceTestTrigger {
 
         return dataSourceProvider.lookupDataSource(dataSourceName);
     }
+
+
+
 }

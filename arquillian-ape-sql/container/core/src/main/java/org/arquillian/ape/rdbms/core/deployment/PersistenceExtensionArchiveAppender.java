@@ -53,7 +53,8 @@ public class PersistenceExtensionArchiveAppender implements AuxiliaryArchiveAppe
                 .addAsServiceProvider(RemoteLoadableExtension.class, RemotePersistenceExtension.class)
                 .addAsServiceProviderAndClasses(StatementSplitter.class, DefaultStatementSplitter.class,
                     OracleStatementSplitter.class)
-                .addAsServiceProvider(TransactionEnabler.class, PersistenceExtensionConventionTransactionEnabler.class);
+                .addAsServiceProvider(TransactionEnabler.class, PersistenceExtensionConventionTransactionEnabler.class)
+                ;
         return persistenceExtensionArchive;
     }
 }

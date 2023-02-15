@@ -18,10 +18,15 @@
 package org.arquillian.ape.rdbms.core.event;
 
 import org.jboss.arquillian.test.spi.event.suite.TestEvent;
+import org.junit.jupiter.api.extension.ExtensionContext;
 
 public class BeforePersistenceTest extends TestEvent {
 
     public BeforePersistenceTest(TestEvent testEvent) {
         super(testEvent.getTestInstance(), testEvent.getTestMethod());
+    }
+
+    public BeforePersistenceTest(final ExtensionContext extensionContext) {
+        super(extensionContext.getTestInstance(), extensionContext.getTestMethod().get());
     }
 }
