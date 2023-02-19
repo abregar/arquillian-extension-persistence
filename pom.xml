@@ -12,7 +12,7 @@
 
   <groupId>org.arquillian.ape</groupId>
   <artifactId>arquillian-ape-parent</artifactId>
-  <version>2.0.0-alpha.7.a1</version>
+  <version>2.0.0-alpha.7.a2</version>
   <packaging>pom</packaging>
 
   <name>Arquillian Ape</name>
@@ -69,8 +69,8 @@
 
   <properties>
     <!-- Arquillian dependencies -->
-    <version.arquillian_core>1.7.0.Alpha13</version.arquillian_core>
-    <version.arquillian_transaction>1.0.6.a1</version.arquillian_transaction>
+    <version.arquillian_core>1.7.0.Alpha14</version.arquillian_core>
+    <version.arquillian_transaction>1.0.6.a2</version.arquillian_transaction>
     <version.shrinkwrap.resolver>3.1.4</version.shrinkwrap.resolver>
     <version.jbossas_spec>3.0.1.Final</version.jbossas_spec>
     <version.dbunit>2.7.3</version.dbunit>
@@ -88,13 +88,12 @@
     <version.cube>1.18.2</version.cube>
     <version.wiremock>3.0.0-beta-2</version.wiremock>
     <version.restassured>5.3.0</version.restassured>
-    <version.junit-jupiter-api>5.9.2</version.junit-jupiter-api>
 
     <!-- Containers -->
     <version.arq.container.glassfish>1.0.0.CR4</version.arq.container.glassfish>
     <version.glassfish>3.1.2.2</version.glassfish>
     <version.jbossas_7>7.0.2.Final</version.jbossas_7>
-    <version.wildfly>27.0.0.Final</version.wildfly>
+    <version.wildfly>27.0.1.Final</version.wildfly>
 
     <!-- jakarta EE -->
     <version.jakartaee-api>10.0.0</version.jakartaee-api>
@@ -208,12 +207,6 @@
         <groupId>com.google.code.findbugs</groupId>
         <artifactId>annotations</artifactId>
         <version>${version.findbugs.annotations}</version>
-      </dependency>
-      <dependency>
-        <groupId>org.junit.jupiter</groupId>
-        <artifactId>junit-jupiter-api</artifactId>
-        <version>${version.junit-jupiter-api}</version>
-        <scope>test</scope>
       </dependency>
     </dependencies>
 

@@ -17,19 +17,18 @@
  */
 package org.arquillian.ape.rdbms.core.dbunit.dataset.json;
 
+import java.io.InputStream;
 import org.arquillian.ape.rdbms.core.testutils.DataSetAssert;
 import org.arquillian.ape.rdbms.core.testutils.FileLoader;
 import org.arquillian.ape.rdbms.core.testutils.TableAssert;
-import org.junit.jupiter.api.AfterAll;
-import org.junit.jupiter.api.Test;
-
-import java.io.InputStream;
+import org.junit.After;
+import org.junit.Test;
 
 public class JsonDataSetTest {
 
     private InputStream input;
 
-    @AfterAll
+    @After
     public void closeStream() {
         FileLoader.close(input);
     }
